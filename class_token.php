@@ -15,12 +15,6 @@ class token
         private $errormsg2 = "token failed";
         private $errormsg3 = "token time out, make the action again";
 
-        function __construct()
-                {
-                if(!isset($_SESSION))
-                        session_start();        
-                }
-        
         function createtoken()
                 {
                 // create new token, prefix (to distinguish with another session date) with random value (to prevent guess)
@@ -71,6 +65,8 @@ class token
         
         }
 
-        if(!isset($token))
+      if(!isset($_SESSION))
+                session_start();
+      if(!isset($token))
                 $token = new token;
 ?>

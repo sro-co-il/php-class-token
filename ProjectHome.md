@@ -1,0 +1,1 @@
+The class help to create secure token, build fields with the token and validate token receives from the browser.
